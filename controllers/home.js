@@ -169,33 +169,3 @@ async function getDistance(x1,x2,y1,y2){
     }
   });
 }
-
-// exports.cutImages = async (req,res)=>{
-//   let {gpsPositions,realPositions, imagePath} = req.body;
-//   gpsPositions = JSON.parse(gpsPositions);
-//   realPositions = JSON.parse(realPositions);
-//   // await deleteAllFilesFromDirectory("public/images");
-//   await deleteAllFilesFromDirectory("public/csv");
-//   for(let i=0;i<realPositions.length;i++){
-//     await cropImage(
-//       imagePath,
-//       `public/images/result${i}.png`,
-//       realPositions[i].x1,
-//       realPositions[i].y1,
-//       realPositions[i].x2-realPositions[i].x1,
-//       realPositions[i].y2-realPositions[i].y1
-//     );
-//   }
-//   // console.log(JSON.stringify(gpsPositions));
-//   let processedGpsPositions = await processGpsPositions(gpsPositions);
-//   // let csvString = await generateCsv(["frame1","frame2","distance"], processedGpsPositions);
-//   let csvString = await generateCsv(processedGpsPositions);
-//   await saveFileToSystem("public/csv/distances.csv", csvString);
-
-  
-//   PythonShell.run('correlation.py', {},(err)=>{
-//     if (err) throw err;
-//     console.log('finished');
-//     res.send({message:"success"});
-//   });
-// };

@@ -1,37 +1,38 @@
 window.onload = function(){
 
-  //if you change image size, please pdate this by the new legend
+  //PARAMETERS 
+  
+  //if you change image size, please Update this by the new legend
   let metersInLegend = 200;
   let legendPixels = 278;
-  //let photoWidth = 1365;
   let photoWidth = 1920;
-  //let photoHeight = 703;
   let photoHeight = 1080;
-  //var imageUrl = "earthsnapshot1point2.jpg";
   var imageUrl = "new_york.jpg";
   let cameraAngle = 79;
   
-  $("#controlPanel").hide();
-  $("#clickText").hide();
-  var canvas = 10; // placeholder
-  var contect = 50; // placeholder
-  // var canvas = document.getElementById('mainCanvas');
-  // var context = canvas.getContext('2d');
-  var gpsPosition = {x:null, y:null};
-  var realPosition = {x:null,y:null};
-  // var rectX = 0;
-  // var rectY = 0;
-  var imageObj = new Image();
-  
+  var stepSize = 5; //default , 5 meters per second
+
   var oneMeterInPixels = legendPixels / metersInLegend; //it's 1 meter in the reality
   var rectW = 100*oneMeterInPixels; //it's 100 meters in reality (if img resolution is 1280*720 and photo captured in height 1200m)
   var rectH = 100*oneMeterInPixels; //it's 100 meters in reality (if img resolution is 1280*720 and photo captured in height 1200m)
   console.log(`oneMeterInPixels:${oneMeterInPixels}`)
 
-  var stepSize = 5; //default , 5 meters per second
-  // var height = 1200;//default
 
+
+
+
+
+
+  // DON'T TOUCH FROM HERE
+  $("#controlPanel").hide();
+  $("#clickText").hide();
+  var canvas = 10; // placeholder
+  var contect = 50; // placeholder
+  var gpsPosition = {x:null, y:null};
+  var realPosition = {x:null,y:null};
+  var imageObj = new Image();
   
+
   let realPositions = [];
   let gpsPositions = [];
 
